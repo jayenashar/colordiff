@@ -331,7 +331,7 @@ sub parse_and_print {
         elsif ( $type eq 'wdiff' ) {
             $_ =~ s/(\[-[^]]*?-\])/$settings{oldtext}$1$settings{off}/gms;
             $_
-                =~ s/([{][+][^]]*?[+][}])/$settings{newtext}$1$settings{off}/gms;
+                =~ s/(\{\+.*?\+\})/$settings{newtext}$1$settings{off}/gms;
         }
         elsif ( $type eq 'debdiff' ) {
             $_ =~ s/(\[-[^]]*?-\])/$settings{oldtext}$1$settings{off}/gms;
